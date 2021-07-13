@@ -23,6 +23,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use rubycritic as evaluation
+gem "rubycritic", require: false
+# Gem to generate badge with rubycritic evaluation
+gem 'rubycritic-small-badge', :require => false
+# Gem needed to use small badge
+gem 'rake'
+# Gem to help us with an error
+gem 'rexml'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
