@@ -1,7 +1,5 @@
-class Administrator
-  def initialize()
+# frozen_string_literal: true
 
-  end
-
-
+# Model Class for Administrators
+class Administrator < ApplicationRecord
 end

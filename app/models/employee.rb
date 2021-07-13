@@ -1,8 +1,5 @@
-class Employee
- def initialize()
+# frozen_string_literal: true
 
-
- end
-
-
+# Model Class for Employees
+class Employee < ApplicationRecord
 end
