@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check In</title>
+</head>
+<body>
+  <h1>Employees Index</h1>
+  <p>
+    <label for="text">#ID EMPLOYEE</label>
+    <input type="text">
+    <button>Check In</button> <br>
+
+    <button><%= link_to "Admin view", administrators_path%></button>
+  </p>
+
+  <h2>Employees List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Private Number</th>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Position</th>
+        <th>Attendance Date</th>
+        <th>Administrator Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td>
+            <%= employee.id %>
+          </td>
+          <td>
+            <%= employee.employeeNumber %>
+          </td>
+          <td>
+            <%= employee.nameEmployee %>
+          </td>
+          <td>
+            <%= employee.emailEmployee %>
+          </td>
+          <td>
+            <%= employee.positionEmployee %>
+          </td>
+          <td>
+            <%= employee.attendanceDate %>
+          </td>
+          <td>
+            <%= employee.administrator_id %>
+          </td>
+          <td>
+            <% end %>
+    </tbody>
+  </table>
+</body>
+</html>
