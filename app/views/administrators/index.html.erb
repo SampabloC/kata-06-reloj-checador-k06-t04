@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Administrators Index</h1>
+
+  <%= render "list"%>
+
+    <%= link_to "Manage Employees", administrators_manageEmployees_path, class: "btn btn-primary" %>
+
+    <%= link_to "Manage Company Branches", administrators_manageCompany_path, class: "btn btn-primary" %>
+
+    <%= link_to "Reports", administrators_reports_path, class: "btn btn-primary" %>
+
+  <br>
+
+    <%= link_to "Home" , root_path, class: "btn btn-primary"%>
+
+</body>
+
+</html>

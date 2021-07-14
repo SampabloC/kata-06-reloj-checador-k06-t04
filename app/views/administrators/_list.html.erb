@@ -1,0 +1,28 @@
+  <table>
+    <thead>
+      <tr>
+        <th>idAdmin</th>
+        <th>nameAdmin</th>
+        <th>emailAdmin</th>
+        <th>password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @administrators.each do |administrator| %>
+        <tr>
+          <td>
+            <%= administrator.id %>
+          </td>
+          <td>
+            <%= administrator.nameAdmin %>
+          </td>
+          <td>
+            <%= administrator.emailAdmin %>
+          </td>
+          <td>
+            <%= administrator.password %>
+          </td>
+          <td>
+            <% end %>
+    </tbody>
+  </table>

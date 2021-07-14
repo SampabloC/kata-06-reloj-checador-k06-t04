@@ -17,45 +17,9 @@
   </p>
 
   <h2>Employees List</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Private Number</th>
-        <th>Number</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Position</th>
-        <th>Attendance Date</th>
-        <th>Administrator Id</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @employees.each do |employee| %>
-        <tr>
-          <td>
-            <%= employee.id %>
-          </td>
-          <td>
-            <%= employee.employeeNumber %>
-          </td>
-          <td>
-            <%= employee.nameEmployee %>
-          </td>
-          <td>
-            <%= employee.emailEmployee %>
-          </td>
-          <td>
-            <%= employee.positionEmployee %>
-          </td>
-          <td>
-            <%= employee.attendanceDate %>
-          </td>
-          <td>
-            <%= employee.administrator_id %>
-          </td>
-          <td>
-            <% end %>
-    </tbody>
-  </table>
+  <%= link_to "New", new_employee_path, class: "btn btn-primary"%>
+<%= render "list"%>
+
+
 </body>
 </html>
