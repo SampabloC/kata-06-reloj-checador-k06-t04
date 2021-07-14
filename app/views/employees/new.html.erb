@@ -1,32 +1,3 @@
 <h1>Add Employee</h1>
 
-<%= form_for(@employees) do |employee| %>
-  
-  <div class="form-group">
-    <%= employee.label :employeeNumber, class: "form-label"%>
-    <%= employee.text_field :employeeNumber, class: "form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= employee.label :nameEmployee, class: "form-label"%>
-    <%= employee.text_field :nameEmployee, class: "form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= employee.label :emailEmployee, class: "form-label"%>
-    <%= employee.text_field :emailEmployee, class: "form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= employee.label :positionEmployee, class: "form-label"%>
-    <%= employee.text_field :positionEmployee, class: "form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= employee.label :attendanceDate, class: "form-label"%>
-    <%= employee.text_field :attendanceDate, class: "form-control"%>
-  </div>
-  
-  <%= employee.submit "Añadir", class: "btn btn-primary"%>
-
-<% end %>
+<%= render "form"%>
