@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use rubycritic as evaluation
-gem "rubycritic", require: false
+gem 'rubycritic', require: false
 # Gem to generate badge with rubycritic evaluation
 gem 'rubycritic-small-badge', :require => false
 # Gem needed to use small badge
