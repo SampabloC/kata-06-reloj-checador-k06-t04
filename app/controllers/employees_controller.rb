@@ -11,27 +11,33 @@ class EmployeesController < ApplicationController
   end
 
   def show
-
+    @employees = Employee.find(params[:id])
   end
 
   def create
-    data = params.require(:employee)
-    employee = Employee.new
-    employee.nameEmployee = data["nameEmployee"]
-    employee.emailEmployee = data["emailEmployee"]
-    employee.positionEmployee = data["positionEmployee"]
-    employee.attendanceDate = data["attendanceDate"]
-    employee.administrator_id = 1
-
-    #employee.administrator_id = data["1"]
-    #Employee.create(data)
-    #.permit(:employeeNumber, :nameEmployee, :emailEmployee, :positionEmployee, :attendanceDate, :administrator_id)
+    employee = Employee.new(employee_params)
+    employee.administrator_id = "1"
     employee.save
-
-    redirect_to root_path
+    redirect_to employee_path
   end
 
   def edit
-
+    @employees = Employee.find(params[:id])
   end
+
+  def update
+    @employees = Employee.find(params[:id])
+    @employees.update(employee_params)
+    redirect_to employee_path
+  end
+
+  def destroy; end
+  
+  private
+
+  def employee_params
+    params.require(:employee).permit(:employeeNumber, :nameEmployee, :emailEmployee, :positionEmployee, :attendanceDate)#, :administrator_id)
+  end
+
+
 end
