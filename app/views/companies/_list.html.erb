@@ -1,0 +1,36 @@
+<table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Administrator</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @company.each do |company| %>
+        <tr>
+          <td>
+            <%= company.id %>
+          </td>
+          <td>
+            <%= company.name_company %>
+          </td>
+          <td>
+            <%= company.address %>
+          </td>
+          <td>
+            <%= company.administrator_id %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_company_path(company), class: "btn btn-warning" %>
+          </td>
+          <td>
+            <%= link_to "Delete", company_path(company), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td> 
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
