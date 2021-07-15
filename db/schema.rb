@@ -10,30 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_09_080680) do
+ActiveRecord::Schema.define(version: 2021_07_15_213909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
-    t.string "nameAdmin"
-    t.string "emailAdmin"
+    t.string "name_admin"
+    t.string "email_admin"
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name_company"
+    t.string "address"
+    t.bigint "administrator_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["administrator_id"], name: "index_companies_on_administrator_id"
+  end
+
   create_table "employees", force: :cascade do |t|
-    t.integer "employeeNumber"
-    t.string "nameEmployee"
-    t.string "emailEmployee"
-    t.string "positionEmployee"
-    t.date "attendanceDate"
+    t.integer "employee_number"
+    t.string "name_employee"
+    t.string "email_employee"
+    t.string "position_employee"
+    t.date "attendance_date"
     t.bigint "administrator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["administrator_id"], name: "index_employees_on_administrator_id"
   end
 
+  add_foreign_key "companies", "administrators"
   add_foreign_key "employees", "administrators"
 end
