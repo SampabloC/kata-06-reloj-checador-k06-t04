@@ -7,19 +7,10 @@
   <title>Check In</title>
 </head>
 <body>
-  <h1>Employees Index</h1>
-  <p>
-    <label for="text">#ID EMPLOYEE</label>
-    <input type="text">
-    <button>Check In</button> <br>
-
-    <button><%= link_to "Admin view", administrators_path%></button>
-  </p>
-
   <h2>Employees List</h2>
   <%= link_to "New", new_employee_path, class: "btn btn-primary"%>
+  <%= link_to "Back", administrators_path, class: "btn btn-info" %>
 <%= render "list"%>
-
 
 </body>
 </html>
