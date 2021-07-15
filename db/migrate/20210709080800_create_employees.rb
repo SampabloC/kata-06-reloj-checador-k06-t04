@@ -3,11 +3,11 @@
 class CreateEmployees < ActiveRecord::Migration[6.1]
   def change
     create_table :employees do |t|
-      t.integer :employeeNumber
-      t.string :nameEmployee
-      t.string :emailEmployee
-      t.string :positionEmployee
-      t.date :attendanceDate
+      t.integer :employee_number
+      t.string :name_employee
+      t.string :email_employee
+      t.string :position_employee
+      t.date :attendance_date
       t.belongs_to :administrator, foreign_key: true
       t.timestamps
     end

@@ -3,11 +3,11 @@
 # Controller Class for Employees
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.all
+    @employee = Employee.all
   end
 
   def new
-    @employees = Employee.new
+    @employee = Employee.new
   end
 
   def create
@@ -37,7 +37,7 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:employeeNumber, :nameEmployee, :emailEmployee, :positionEmployee, :attendanceDate)#, :administrator_id)
+    params.require(:employee).permit(:employee_number, :name_employee, :email_employee, :position_employee, :attendance_date)#, :administrator_id)
   end
 
   def set_employees

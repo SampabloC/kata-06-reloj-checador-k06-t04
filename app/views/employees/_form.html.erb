@@ -1,28 +1,28 @@
 <%= form_for(@employee) do |employee| %>
   
   <div class="form-group">
-    <%= employee.label :employeeNumber, class: "form-label"%>
-    <%= employee.text_field :employeeNumber, class: "form-control"%>
+    <%= employee.label :employee_number, class: "form-label"%>
+    <%= employee.text_field :employee_number, class: "form-control"%>
   </div>
 
   <div class="form-group">
-    <%= employee.label :nameEmployee, class: "form-label"%>
-    <%= employee.text_field :nameEmployee, class: "form-control"%>
+    <%= employee.label :name_employee, class: "form-label"%>
+    <%= employee.text_field :name_employee, class: "form-control"%>
   </div>
 
   <div class="form-group">
-    <%= employee.label :emailEmployee, class: "form-label"%>
-    <%= employee.text_field :emailEmployee, class: "form-control"%>
+    <%= employee.label :email_employee, class: "form-label"%>
+    <%= employee.text_field :email_employee, class: "form-control"%>
   </div>
 
   <div class="form-group">
-    <%= employee.label :positionEmployee, class: "form-label"%>
-    <%= employee.text_field :positionEmployee, class: "form-control"%>
+    <%= employee.label :position_employee, class: "form-label"%>
+    <%= employee.text_field :position_employee, class: "form-control"%>
   </div>
 
   <div class="form-group">
-    <%= employee.label :attendanceDate, class: "form-label"%>
-    <%= employee.text_field :attendanceDate, class: "form-control", type:"date"%>
+    <%= employee.label :attendance_date, class: "form-label"%>
+    <%= employee.text_field :attendance_date, class: "form-control", type:"date"%>
   </div>
   
   <%= employee.submit "Save", class: "btn btn-success"%>
