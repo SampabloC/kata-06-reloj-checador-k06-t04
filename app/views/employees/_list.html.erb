@@ -8,9 +8,6 @@
         <th>Position</th>
         <th>Attendance Date</th>
         <th>Administrator Id</th>
-        <th>Show</th>
-        <th>Edit</th>
-        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -38,17 +35,14 @@
             <%= employee.administrator_id %>
           </td>
           <td>
-            <%= link_to "Show", employee_path(employee), class: "btn btn-info" %>
-          </td>
-          <td>
             <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-warning" %>
           </td>
-          
           <td>
-            <%= link_to "Delete", employee_path(employee) ,class: "btn btn-danger" %>
+            <%= link_to "Delete", employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </td>
 
         </tr>
       <% end %>
     </tbody>
   </table>
+  

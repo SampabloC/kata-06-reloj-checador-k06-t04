@@ -10,28 +10,29 @@ class EmployeesController < ApplicationController
     @employees = Employee.new
   end
 
-  def show
-    @employees = Employee.find(params[:id])
-  end
-
   def create
     employee = Employee.new(employee_params)
     employee.administrator_id = "1"
     employee.save
-    redirect_to employee_path
+    redirect_to employees_path
   end
 
   def edit
-    @employees = Employee.find(params[:id])
+    set_employees
   end
 
   def update
-    @employees = Employee.find(params[:id])
-    @employees.update(employee_params)
-    redirect_to employee_path
+    set_employees
+    @employee.update(employee_params)
+    redirect_to employees_path
   end
 
-  def destroy; end
+  def destroy
+    set_employees
+    @employee.destroy
+
+    redirect_to employees_path
+  end
   
   private
 
@@ -39,5 +40,8 @@ class EmployeesController < ApplicationController
     params.require(:employee).permit(:employeeNumber, :nameEmployee, :emailEmployee, :positionEmployee, :attendanceDate)#, :administrator_id)
   end
 
-
+  def set_employees
+    @employee = Employee.find(params[:id])
+  end
+  
 end
