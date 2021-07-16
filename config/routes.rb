@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/administrators/reports', to: 'administrators#reports'
   get '/administrators/validation', to: 'administrators#validation'
   root "administrators#check"
-  resources :employees, :administrators, :companies
+  resources :employees, :administrators, :companies, :reports
 end

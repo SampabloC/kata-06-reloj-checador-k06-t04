@@ -6,10 +6,6 @@ class AdministratorsController < ApplicationController
     @administrators = Administrator.all
   end
 
-  def manageCompany; end
-
-  def report; end
-
   def check; end
 
   def validation; end
