@@ -4,9 +4,6 @@ class CreateReports < ActiveRecord::Migration[6.1]
       t.datetime :check_in
       t.datetime :check_out
       t.belongs_to :employee, foreign_key: true
-      
-
-
 
       t.timestamps
     end
