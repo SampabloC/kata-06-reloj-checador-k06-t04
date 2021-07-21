@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:administrator_id] =  @admin.id
       return redirect_to administrators_path
     end
-      redirect_to login_path
+    flash.alert = "User not found"
+    redirect_to login_path
 
   end
 
