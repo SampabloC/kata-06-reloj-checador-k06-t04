@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_action :validate_url
+
   def index
     @company = Company.all
   end

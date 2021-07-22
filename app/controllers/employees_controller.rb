@@ -2,6 +2,8 @@
 
 # Controller Class for Employees
 class EmployeesController < ApplicationController
+  before_action :validate_url
+
   def index
     @employee = Employee.all
   end

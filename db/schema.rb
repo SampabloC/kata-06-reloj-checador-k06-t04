@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_221019) do
+ActiveRecord::Schema.define(version: 2021_07_20_221011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_20_221019) do
   create_table "administrators", force: :cascade do |t|
     t.string "name_admin"
     t.string "email_admin"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_07_20_221019) do
     t.string "name_employee"
     t.string "email_employee"
     t.string "position_employee"
-    t.date "attendance_date"
     t.bigint "administrator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,13 +46,13 @@ ActiveRecord::Schema.define(version: 2021_07_20_221019) do
   create_table "reports", force: :cascade do |t|
     t.datetime "check_in"
     t.datetime "check_out"
-    t.bigint "administrator_id"
+    t.bigint "employee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["administrator_id"], name: "index_reports_on_administrator_id"
+    t.index ["employee_id"], name: "index_reports_on_employee_id"
   end
 
   add_foreign_key "companies", "administrators"
   add_foreign_key "employees", "administrators"
-  add_foreign_key "reports", "administrators"
+  add_foreign_key "reports", "employees"
 end
