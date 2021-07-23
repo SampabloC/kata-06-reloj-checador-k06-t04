@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Insert data in Administrators table
-admin = Administrator.new(name_admin: "admin", email_admin: "admin@admin.com", password_digest: "1234")
+pw = BCrypt::Password.create('1234')
+admin = Administrator.new(name_admin: "Mr. Wayne", email_admin: "bruce@waynecorp.com", password_digest: pw)
 admin.save

@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   before_action :validate_url
 
   def index
-    @employee = Employee.all
+    @employee = Employee.where(status: true)
   end
 
   def new
@@ -15,6 +15,7 @@ class EmployeesController < ApplicationController
   def create
     employee = Employee.new(employee_params)
     employee.administrator_id = "1"
+    employee.status = true
     employee.save
     redirect_to employees_path
   end
@@ -31,7 +32,10 @@ class EmployeesController < ApplicationController
 
   def destroy
     set_employees
-    @employee.destroy
+    if @employee.status
+      @employee.update(status: false)
+      flash[:notice] = "Employee #{@employee.name_employee} disabled succesfully."
+    end
 
     redirect_to employees_path
   end

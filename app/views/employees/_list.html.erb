@@ -39,6 +39,11 @@
 
         </tr>
       <% end %>
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-info text-center">
+          <%= msg %>
+        </div>
+      <% end %>
     </tbody>
   </table>
   
