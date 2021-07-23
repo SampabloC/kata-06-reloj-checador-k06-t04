@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_07_20_221011) do
     t.string "name_employee"
     t.string "email_employee"
     t.string "position_employee"
+    t.boolean "status"
     t.bigint "administrator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
