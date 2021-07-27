@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/administrators/manageCompany', to: 'administrators#manageCompany'
   get '/administrators/reports', to: 'administrators#reports'
   
+
+  get 'check_out', to: 'reports#checkout'
+  
   root "administrators#check"
   resources :employees, :administrators, :companies, :reports
 end
