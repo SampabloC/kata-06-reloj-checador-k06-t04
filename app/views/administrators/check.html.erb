@@ -23,17 +23,19 @@
     <div>
       <%= form_with url: reports_path do |report|%>
         <div class="form-group">
-          <%= report.label :employee_number, class: "form-label"%>
-          <%= report.number_field :employee_number, class: "form-control"%>
-
+          <%= report.label :private_number, class: "form-label"%>
+          <%= report.number_field :private_number, class: "form-control"%>
         </div>
-
         <%= report.submit "Check in", class: "btn btn-success"%>
-      <% end %>    
+        <%= report.submit "Check out", class: "btn btn-danger"%>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info text-center">
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
+          
     </div>
-      
-    <%= link_to "Check Out", check_out_path, class: "btn btn-danger" %>
-
-    
+ 
     <%= link_to "Log in", login_path, class: "btn btn-primary" %>
   </div>

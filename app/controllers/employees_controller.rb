@@ -34,7 +34,7 @@ class EmployeesController < ApplicationController
     set_employees
     if @employee.status
       @employee.update(status: false)
-      flash[:notice] = "Employee #{@employee.name_employee} disabled succesfully."
+      flash[:notice] = "Employee #{@employee.name_employee} succesfully disabled."
     end
 
     redirect_to employees_path
