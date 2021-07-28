@@ -1,9 +1,41 @@
-  <h1>Foo Corp</h1>
-  <p>
-    <label for="text">#ID EMPLOYEE</label>
-    <input type="text">
-    <button>Check In</button> <br>
+<div class="Title">
+    <h1>Foo Corp</h1>
+  </div>
+  <div>
+    
+    <div>
+      <h4 class="date">
+        <%=
+          Time.now.strftime("%d-%B-%Y")
+        %>
+      </h4>
+    </div>
+    <div>
+      <h4 class="time">
+            <%=
+              Time.now.strftime("%R")
+            %>
+      </h4>  
+    </div>
 
+  </div>
+  <div>
+    <div>
+      <%= form_with url: reports_path do |report|%>
+        <div class="form-group">
+          <%= report.label :private_number, class: "form-label"%>
+          <%= report.number_field :private_number, class: "form-control"%>
+        </div>
+        <%= report.submit "Check in", class: "btn btn-success"%>
+        <%= report.submit "Check out", class: "btn btn-danger"%>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info text-center">
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
+          
+    </div>
+ 
     <%= link_to "Log in", login_path, class: "btn btn-primary" %>
-  </p>
-  
+  </div>

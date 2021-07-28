@@ -128,6 +128,7 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
+    parallel (1.20.1)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     path_expander (1.1.0)
@@ -184,6 +185,18 @@ GEM
     repo-small-badge (0.2.7)
       victor (~> 0.2.8)
     rexml (3.2.5)
+    rubocop (1.18.4)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.8.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.8.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
     ruby_parser (3.16.0)
       sexp_processor (~> 4.15, >= 4.15.1)
     rubycritic (4.6.1)
@@ -238,6 +251,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.0.0)
     victor (0.2.8)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -281,6 +295,7 @@ DEPENDENCIES
   rails (~> 6.1.4)
   rake
   rexml
+  rubocop
   rubycritic
   rubycritic-small-badge
   sass-rails (>= 6)
