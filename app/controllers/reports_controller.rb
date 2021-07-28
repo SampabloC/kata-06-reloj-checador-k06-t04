@@ -69,4 +69,9 @@ class ReportsController < ApplicationController
       end
     end
   end
+
+  def get_reports
+    return Report.all
+
+  end
 end

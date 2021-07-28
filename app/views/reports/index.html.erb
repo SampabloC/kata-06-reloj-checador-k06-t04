@@ -1,17 +1,36 @@
 <h1>Report View</h1>
 
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-ligth">
       <tr>
-        <th>Id</th>
+        <th class="col">Id</th>
+        <th class="col">Check In</th>
+        <th class="col">Check Out</th>
+        <th class="col">Employee Id</th>
+        
       </tr>
     </thead>
     <tbody>
       <% @reports = Report.all %>
       <% @reports.each do |report| %>
         <tr>
-          <td>
+          <th scope="row">
             <%= report.id %>
+          </th>
+          <td>
+            <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
+          </td>
+          <td>
+            <%= 
+            if report.check_out == nil
+              report.check_out
+            else
+              "#{report.check_out.strftime('%d-%B-%Y')}  #{report.check_out.strftime('%R')} " 
+            end
+            %>
+          </td>
+          <td>
+            <%= report.employee_id %>
           </td>
 
         </tr>
