@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+.body-admin {
+  text-align: center;
+  padding-top: 15vmax;
+}
+
+.body-check {
+  text-align: center;
+}
+
+#block-text {
+  margin-left: 60px;
+  width: 223px;
+}
+
+#block-check {
+  margin-left: 35%;
+  margin-right: 20%;
+  font-size: 40px;
+}
+
+#input-check {
+  width: 200px;
+}
+
+.date {
+  text-align: center;
+  font-size: 10vmin;
+  font-family: 'Gugi', cursive;
+}
+
+.time {
+  text-align: center;
+  font-size: 7vmin;
+  font-family: 'Gugi', cursive;
+  color: #4682B4;
+  margin-bottom: 50px;
+}

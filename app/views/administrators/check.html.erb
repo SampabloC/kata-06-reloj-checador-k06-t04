@@ -1,41 +1,40 @@
-<div class="Title">
+<div class="logo">
     <h1>Foo Corp</h1>
   </div>
-  <div>
-    
-    <div>
-      <h4 class="date">
+<body>  
+    <div class="date">
         <%=
           Time.now.strftime("%d-%B-%Y")
         %>
-      </h4>
     </div>
-    <div>
-      <h4 class="time">
-            <%=
-              Time.now.strftime("%R")
-            %>
-      </h4>  
+    <div class="time">
+        <%=
+          Time.now.strftime("%R")
+        %>
     </div>
 
-  </div>
-  <div>
+  <div class="body-check">
     <div>
       <%= form_with url: reports_path do |report|%>
-        <div class="form-group">
+        <div class="form-group" id="block-check">
           <%= report.label :private_number, class: "form-label"%>
-          <%= report.number_field :private_number, class: "form-control"%>
+          <div id="input-check">
+            <%= report.number_field :private_number, class: "form-control fs-1 text-center"%>
+          </div>
         </div>
-        <%= report.submit "Check in", class: "btn btn-success"%>
-        <%= report.submit "Check out", class: "btn btn-danger"%>
         <% flash.each do |type, msg| %>
           <div class="alert alert-info text-center">
             <%= msg %>
           </div>
         <% end %>
+        <div class="buttons">
+        <%= report.submit "Check in", class: "btn btn-success btn-lg"%>
+        <%= report.submit "Check out", class: "btn btn-danger btn-lg"%>
+        </div>
       <% end %>
           
     </div>
  
     <%= link_to "Log in", login_path, class: "btn btn-primary" %>
   </div>
+</body>

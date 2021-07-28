@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <h1>Welcome back <%= current_user.name_admin %></h1>
-
-  <%= render "list"%>
-  <div>
-    <%= link_to "Manage Employees", employees_path, class: "btn btn-primary" %>
-
-    <%= link_to "Manage Company Branches", companies_path, class: "btn btn-primary" %>
-
-    <%= link_to "Reports",  reports_path, class: "btn btn-primary" %>
+  <div class="logo">
+    <h1>Foo Corp</h1>
   </div>
-  
-  <div>
-    <%= link_to "Log Out" , logout_path, class: "btn btn-danger"%>
-  </div>
-</body>
+<div class="body-admin">
+  <body>
+    <h1>Welcome back <%= current_user.name_admin %></h1>
 
-</html>
+    <%#= render "list"%>
+    <div class="buttons">
+      <%= link_to "Manage Employees", employees_path, class: "btn btn-primary" %>
+
+      <%= link_to "Manage Company Branches", companies_path, class: "btn btn-primary" %>
+
+      <%= link_to "Reports",  reports_path, class: "btn btn-primary" %>
+    </div>
+    
+    <div>
+      <%= link_to "Log Out" , logout_path, class: "btn btn-danger"%>
+    </div>
+  </body>
+</div>
