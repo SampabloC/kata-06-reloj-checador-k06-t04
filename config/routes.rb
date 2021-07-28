@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   
 
   get 'check_out', to: 'reports#checkout'
+  get 'report_day', to: 'reports#report_day'
+  get 'report_month', to: 'report#report_month'
+  get 'report_average', to: 'report#report_average'
   
   root "administrators#check"
   resources :employees, :administrators, :companies, :reports
