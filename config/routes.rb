@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/administrators/reports', to: 'administrators#reports'
   
 
-  get 'check_out', to: 'reports#checkout'
   get 'report_day', to: 'reports#report_day'
   get 'report_month', to: 'reports#report_month'
   get 'report_average', to: 'reports#report_average'
