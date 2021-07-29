@@ -1,0 +1,58 @@
+body {
+  text-align: center;
+}
+
+.logo-employee {
+  text-align: right;
+  margin-right: 3%;
+  margin-top: 3%;
+  font-size: 7vmin;
+  font-family: 'Gugi', cursive;
+  color: #4682B4;
+}
+
+#form_style {
+  width: 50vmax;
+  display: flex;
+  justify-content: center;
+  
+  flex-direction: column;
+  margin-top: 4%;
+  
+}
+
+#th-private {
+  width: 3%;
+}
+
+#th-number {
+  width: 3%;
+}
+
+#th-name {
+  width: 5%;
+}
+
+#th-email {
+  width: 5%;
+}
+
+#th-position {
+  width: 5%;
+}
+
+#th-admin {
+  width: 3%;
+}
+
+#th-options {
+  width: 14%;
+}
+
+#tr-edit {
+  width: 4%;
+}
+
+#tr-deactivate {
+  width: 4%;
+}

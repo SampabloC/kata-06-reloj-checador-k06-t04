@@ -1,25 +1,27 @@
-<%= form_for(@employee) do |employee| %>
-  
-  <div class="form-group">
-    <%= employee.label :employee_number, class: "form-label"%>
-    <%= employee.text_field :employee_number, class: "form-control"%>
-  </div>
+<div class="form">
+  <%= form_for(@employee) do |employee| %>
+    <div class="d-flex row">
+      <div class="form-group d-flex justify-content-center">
+        <%= employee.label :employee_number, class: "form-label"%>
+        <%= employee.text_field :employee_number, class: "form-control"%>
+      </div>
 
-  <div class="form-group">
-    <%= employee.label :name_employee, class: "form-label"%>
-    <%= employee.text_field :name_employee, class: "form-control"%>
-  </div>
+      <div class="form-group d-flex justify-content-center">
+        <%= employee.label :name_employee, class: "form-label"%>
+        <%= employee.text_field :name_employee, class: "form-control"%>
+      </div>
 
-  <div class="form-group">
-    <%= employee.label :email_employee, class: "form-label"%>
-    <%= employee.text_field :email_employee, class: "form-control"%>
-  </div>
+      <div class="form-group d-flex justify-content-center">
+        <%= employee.label :email_employee, class: "form-label"%>
+        <%= employee.text_field :email_employee, class: "form-control"%>
+      </div>
 
-  <div class="form-group">
-    <%= employee.label :position_employee, class: "form-label"%>
-    <%= employee.text_field :position_employee, class: "form-control"%>
-  </div>
-  
-  <%= employee.submit "Save", class: "btn btn-success"%>
-
-<% end %>
+      <div class="form-group d-flex justify-content-center">
+        <%= employee.label :position_employee, class: "form-label"%>
+        <%= employee.text_field :position_employee, class: "form-control"%>
+      </div>
+      
+      <%= employee.submit "Save", class: "btn btn-success"%>
+    </div>
+  <% end %>
+</div>

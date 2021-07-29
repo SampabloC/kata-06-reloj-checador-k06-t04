@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
+
 .body-admin {
   text-align: center;
-  padding-top: 15vmax;
+  padding-top: 10vmax;
+  font-size: 7vmin;
+  font-family: 'Gugi', cursive;
+  color: #4682B4;
 }
 
 .body-check {
@@ -11,7 +15,7 @@
 
 #block-text {
   margin-left: 60px;
-  width: 223px;
+  width: 50%;
 }
 
 #block-check {

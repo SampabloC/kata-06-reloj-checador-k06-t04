@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Check In</title>
-</head>
 <body>
-  <h2>Employees List</h2>
-  <%= link_to "New", new_employee_path, class: "btn btn-primary"%>
-  <%= link_to "Back", administrators_path, class: "btn btn-info" %>
-<%= render "list"%>
-
+  <h2 class="text">Employees List</h2>
+  <div class="buttons">
+  <%= link_to "New", new_employee_path, class: "btn btn-primary btn-lg"%>
+  <%= link_to "Back", administrators_path, class: "btn btn-info btn-lg" %>
+  </div>
+  <%= render "list"%>
 </body>
-</html>
