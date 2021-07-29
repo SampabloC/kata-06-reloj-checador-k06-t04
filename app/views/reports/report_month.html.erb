@@ -11,16 +11,10 @@
       </tr>
     </thead>
     <tbody>
-      <% 
-        @reports = Report.all 
-        reports_today = 0
-      %>
-      <% @reports.each do |report| %>
-        <% 
-          today_date = Time.now
-          date_report = report.check_in
-        %>
-        <% if today_date.month == date_report.month && today_date.year == date_report.year%>
+      <% get_reports().each do |report| %>
+        <% if exist_reports_month(report).nil?%>
+          <%not_reports()%>
+        <%else%>
           <tr>
             <th scope="row">
               <%= report.id %>
@@ -29,13 +23,7 @@
               <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
             </td>
             <td>
-              <%= 
-              if report.check_out == nil
-                report.check_out
-              else
-                "#{report.check_out.strftime('%d-%B-%Y')}  #{report.check_out.strftime('%R')} " 
-              end
-              %>
+              <%= check_out_exist(report) %>
             </td>
             <td>
               <%= report.employee_id %>
@@ -43,8 +31,5 @@
           </tr>
         <%end%>          
       <% end %>
-      <%if reports_today == 0%>
-        <h1>No reports today</h1>
-      <%end%>
     </tbody>
   </table>

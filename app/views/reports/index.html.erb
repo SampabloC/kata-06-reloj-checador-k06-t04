@@ -28,7 +28,7 @@
             <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
           </td>
           <td>
-            <%= report_exist(report) %>
+            <%= check_out_exist(report) %>
           </td>
           <td>
             <%= report.employee_id %>

@@ -20,6 +20,14 @@ module ReportsHelper
     end
   end
 
+  def exist_reports_month(report)
+    today = Time.now
+    date_report = report.check_in
+    if today.month == date_report.month && today.year == date_report.year
+      report
+    end
+  end
+
   def get_report(report)
     exist_reports_today(report)
 

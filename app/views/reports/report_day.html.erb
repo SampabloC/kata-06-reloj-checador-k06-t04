@@ -17,16 +17,16 @@
         <%else%>
           <tr>
             <th scope="row">
-              <% get_report(report).id %>
+              <% report.id %>
             </th>
             <td>
-              <%= "#{get_report(report).check_in.strftime('%d-%B-%Y')}  #{get_report(report).check_in.strftime('%R')} "%>
+              <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
             </td>
             <td>
               <%= check_out_exist(report) %>
             </td>
             <td>
-              <%= get_report(report).employee_id %>
+              <%= report.employee_id %>
             </td>
           </tr>
         <%end%>
