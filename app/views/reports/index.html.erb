@@ -19,7 +19,6 @@
       </tr>
     </thead>
     <tbody>
-      <% @reports = Report.all %>
       <% @reports.each do |report| %>
         <tr>
           <th scope="row">
@@ -29,13 +28,7 @@
             <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
           </td>
           <td>
-            <%= 
-            if report.check_out == nil
-              report.check_out
-            else
-              "#{report.check_out.strftime('%d-%B-%Y')}  #{report.check_out.strftime('%R')} " 
-            end
-            %>
+            <%= report_exist(report) %>
           </td>
           <td>
             <%= report.employee_id %>
