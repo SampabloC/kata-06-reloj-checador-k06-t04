@@ -64,7 +64,40 @@ The attendance web app must meet the following reuqirements:
 - Libertad para utilizar cualquier diseño, imágenes, etc, que considere necesarios y apropiados
 
 ## Setup
-En [este elnace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
+Para ejecutar en el proyecto, trs haberlo descargado haremos uso del comando
+```
+bundle install
+```
+El cual nos instalará las gemas necesarias para poder correr el proyecto.
+También sera necesario tener iniciado el servicio de PostgreSQL, para esto usaremos en Ubuntu
+```
+sudo service postgresql start
+```
 
+En caso de que de un error por falta de webpacker usaremos lo siguiente para que lo instale:
+```
+yarn install
+```
+
+Con eso tendriamos lo básico para poder ejecutar el proyecto, faltarían las bases de datos, para lo cual haremos uso de
+```
+rails db:migrate
+```
+Este comando nos creará las bases de datos y tablas, ya enseguida usaremos
+```
+rails db:seed
+```
+Esto para que nos haga la inserción de los datos que se encuentran en el archivo seed dentro de la carpeta db.
+
+Ya con esto previo el proyecto se podrá ejecutar con exito haciendo uso de 
+```
+rails server
+```
+
+
+- Integrantes
+ - Roberto Faustino Carrasco Medina
+ - Miriam Alicia Márquez Rivera
+ - Javier Ismael Sampablo Cuevas
 ## Enlaces
 [Encuentra aquí una lista completa de recursos de ayuda](https://github.com/bright-coders/commons/tree/master/topics/resources)
