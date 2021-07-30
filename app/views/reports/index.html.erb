@@ -1,9 +1,42 @@
 <h1>Report View</h1>
 
 <div>
-  <%= link_to "Day", administrators_path, class: "btn btn-success" %>
-  <%= link_to "Month", administrators_path, class: "btn btn-success" %>
-  <%= link_to "Check In/Out Average", administrators_path, class: "btn btn-success" %>
+  <%= link_to "Day", report_day_path, class: "btn btn-success" %>
+  <%= link_to "Month", report_month_path, class: "btn btn-success" %>
+  <%= link_to "Check In/Out Average", report_average_path, class: "btn btn-success" %>
 </div>
 
 <%= link_to "Back", administrators_path, class: "btn btn-info" %>
+
+<table class="table">
+    <thead class="thead-ligth">
+      <tr>
+        <th class="col">Id</th>
+        <th class="col">Check In</th>
+        <th class="col">Check Out</th>
+        <th class="col">Employee Id</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <th scope="row">
+            <%= report.id %>
+          </th>
+          <td>
+            <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
+          </td>
+          <td>
+            <%= check_out_exist(report) %>
+          </td>
+          <td>
+            <%= report.employee_id %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+

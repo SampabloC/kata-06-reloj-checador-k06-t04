@@ -1,0 +1,35 @@
+<%= link_to "back", reports_path, class: "btn btn-info" %>
+
+<table class="table">
+    <thead class="thead-ligth">
+      <tr>
+        <th class="col">Id</th>
+        <th class="col">Check In</th>
+        <th class="col">Check Out</th>
+        <th class="col">Employee Id</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% get_reports().each do |report| %>
+        <% if exist_reports_today(report).nil? %>
+          <%not_reports()%>
+        <%else%>
+          <tr>
+            <th scope="row">
+              <% report.id %>
+            </th>
+            <td>
+              <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
+            </td>
+            <td>
+              <%= check_out_exist(report) %>
+            </td>
+            <td>
+              <%= report.employee_id %>
+            </td>
+          </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+  </table>

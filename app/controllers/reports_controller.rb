@@ -4,7 +4,9 @@
 class ReportsController < ApplicationController
   before_action :validate_url, only: [:index]
 
-  def index; end
+  def index; 
+    @reports = Report.all
+  end
 
   def create
     @employees = Employee.where(status: true) # Empleados activos
@@ -68,5 +70,10 @@ class ReportsController < ApplicationController
         return true if date_report == date_now # Valida si la fecha actual coincide con la fecha del reporte
       end
     end
+  end
+
+  def get_reports
+    return Report.all
+
   end
 end
