@@ -3,10 +3,12 @@ class CompaniesController < ApplicationController
 
   def index
     @company = Company.all
+    render layout: 'submenu'
   end
 
   def new
     @company = Company.new
+    render layout: 'submenu'
   end
 
   def create
@@ -18,6 +20,7 @@ class CompaniesController < ApplicationController
 
   def edit
     set_companies
+    render layout: 'submenu'
   end
 
   def update

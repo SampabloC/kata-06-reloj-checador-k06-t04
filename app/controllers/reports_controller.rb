@@ -2,10 +2,23 @@
 
 # Clase del controlador de reportes
 class ReportsController < ApplicationController
-  before_action :validate_url, only: [:index]
+  before_action :validate_url, only: [:index, :report_average, :report_day, :report_month]
 
   def index; 
     @reports = Report.all
+    render layout: 'submenu'
+  end
+
+  def report_average
+    render layout: 'submenu'
+  end
+
+  def report_day
+    render layout: 'submenu'
+  end
+
+  def report_month
+    render layout: 'submenu'
   end
 
   def create
@@ -72,8 +85,5 @@ class ReportsController < ApplicationController
     end
   end
 
-  def get_reports
-    return Report.all
-
-  end
+  def get_reports; end
 end

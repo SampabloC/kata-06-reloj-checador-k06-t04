@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy'
   get '/administrators/manageCompany', to: 'administrators#manageCompany'
-  get '/administrators/reports', to: 'administrators#reports'
   
-
   get 'report_day', to: 'reports#report_day'
   get 'report_month', to: 'reports#report_month'
   get 'report_average', to: 'reports#report_average'

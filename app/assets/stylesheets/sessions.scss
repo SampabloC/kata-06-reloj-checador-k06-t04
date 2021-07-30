@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+#btnLogin{
+    margin-top: 50px;
+    padding: 5px 50px;
+    border-radius: 12px;
+    background-color: #DE108D;
+    color:  #0A139E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#form{
+    margin-top: 150px;
+}
+
+.form-group{
+    
+    display: flex;
+    flex-direction: row;
+    color: #10DDDE;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+.form-control{
+    margin-left: 50px;
+    width: 400px;
+    height: 50px;
+    border-radius: 25px; 
+    box-shadow: none !important; 
+}
+
+.block_color_blue{
+    border: 2px solid #0A139E !important;
+}
+
+.block_color_pink{
+    border: 2px solid #DE108D !important;
+}
+
+

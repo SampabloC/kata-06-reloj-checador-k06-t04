@@ -1,12 +1,14 @@
-  <table>
+<div id="table">  
+  <table class="table table-striped">
     <thead>
       <tr>
-        <th>Private Number</th>
-        <th>Number</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Position</th>
-        <th>Administrator Id</th>
+        <th id="th-private">Private Number</th>
+        <th id="th-number">Number</th>
+        <th id="th-name">Name</th>
+        <th id="th-email">Email</th>
+        <th id="th-position">Position</th>
+        <th id="th-admin">Administrator Id</th>
+        <th colspan="2" id="th-options">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -30,11 +32,11 @@
           <td>
             <%= employee.administrator_id %>
           </td>
-          <td>
+          <td id="tr-edit">
             <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-warning" %>
           </td>
-          <td>
-            <%= link_to "Delete", employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <td id="tr-deactivate">
+            <%= link_to "Deactivate", employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </td>
 
         </tr>
@@ -46,4 +48,5 @@
       <% end %>
     </tbody>
   </table>
+</div>
   

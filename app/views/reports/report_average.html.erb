@@ -1,14 +1,19 @@
-<%= link_to "back", reports_path, class: "btn btn-info" %>
-<div>
-  <div>
-    <h3> Average Check In</h3>
-
-    <h4><%= average_check_in() %></h4>
+<div class="text">
+  <div class="mb-5">
+    Average Check In
+    <div>
+    <%= average_check_in() %>
+    </div>
   </div>
-  
+
   <div>
-    <h3> Average Check Out</h3>
+    Average Check Out
     
-    <h4><%= average_check_out() %></h4>
+    <div>
+      <%= average_check_out() %>
+    </div>
   </div>  
+</div>
+<div class="buttons">
+  <%= link_to "Back", reports_path, class: "btn btn-info" %>
 </div>

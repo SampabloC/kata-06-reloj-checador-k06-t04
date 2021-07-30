@@ -1,10 +1,12 @@
-<table>
+<div id="table">
+  <table class="table table-striped">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Administrator</th>
+        <th id="th-number">Id</th>
+        <th id="th-name">Name</th>
+        <th id="th-email">Address</th>
+        <th id="th-admin">Administrator</th>
+        <th colspan="2" id="th-options">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -22,10 +24,10 @@
           <td>
             <%= company.administrator_id %>
           </td>
-          <td>
+          <td id="tr-edit">
             <%= link_to "Edit", edit_company_path(company), class: "btn btn-warning" %>
           </td>
-          <td>
+          <td id="tr-deactivate">
             <%= link_to "Delete", company_path(company), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </td> 
 
@@ -33,4 +35,4 @@
       <% end %>
     </tbody>
   </table>
-  
+</div>

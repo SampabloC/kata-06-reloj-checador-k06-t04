@@ -1,13 +1,16 @@
-<%= link_to "back", reports_path, class: "btn btn-info" %>
-
-<table class="table">
+<div class="text">
+Today's Report
+</div>
+<div class="buttons">
+<%= link_to "Back", reports_path, class: "btn btn-info" %>
+</div>
+<div id="table">
+<table class="table table-striped">
     <thead class="thead-ligth">
       <tr>
-        <th class="col">Id</th>
         <th class="col">Check In</th>
         <th class="col">Check Out</th>
-        <th class="col">Employee Id</th>
-        
+        <th class="col">Employee Private Number</th>
       </tr>
     </thead>
     <tbody>
@@ -16,9 +19,6 @@
           <%not_reports()%>
         <%else%>
           <tr>
-            <th scope="row">
-              <% report.id %>
-            </th>
             <td>
               <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
             </td>
@@ -33,3 +33,4 @@
       <%end%>
     </tbody>
   </table>
+</div>

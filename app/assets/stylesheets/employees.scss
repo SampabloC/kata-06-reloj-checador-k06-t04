@@ -1,0 +1,69 @@
+body {
+  text-align: center;
+}
+
+.logo-employee {
+  text-align: right;
+  margin-right: 3%;
+  margin-top: 3%;
+  font-size: 7vmin;
+  font-family: 'Gugi', cursive;
+  color: #4682B4;
+}
+
+.btn-success{
+    margin-top: 50px;
+    padding: 5px 50px;
+    border-radius: 12px;
+    background-color: #DE108D;
+    color:  #0A139E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+}
+
+.btn-success:hover{
+  background-color: #0A139E;
+  color: #DE108D;
+}
+
+.form-label{
+  width: 300px;
+  text-align: start;
+}
+
+#th-private {
+  width: 3%;
+}
+
+#th-number {
+  width: 3%;
+}
+
+#th-name {
+  width: 5%;
+}
+
+#th-email {
+  width: 5%;
+}
+
+#th-position {
+  width: 5%;
+}
+
+#th-admin {
+  width: 3%;
+}
+
+#th-options {
+  width: 14%;
+}
+
+#tr-edit {
+  width: 4%;
+}
+
+#tr-deactivate {
+  width: 4%;
+}

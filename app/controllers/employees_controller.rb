@@ -6,10 +6,12 @@ class EmployeesController < ApplicationController
 
   def index
     @employee = Employee.where(status: true)
+    render layout: 'submenu'
   end
 
   def new
     @employee = Employee.new
+    render layout: 'submenu'
   end
 
   def create
@@ -22,6 +24,7 @@ class EmployeesController < ApplicationController
 
   def edit
     set_employees
+    render layout: 'submenu'
   end
 
   def update

@@ -1,6 +1,11 @@
-<h1>Company View</h1>
+<body>
+  <div class="text">
+      Companies List
+  </div>
+  <div class="buttons">
+    <%= link_to "New", new_company_path, class: "btn btn-primary btn-lg"%>
+    <%= link_to "Back", administrators_path, class: "btn btn-info btn-lg" %>
+  </div>
 
-<%= link_to "New", new_company_path, class: "btn btn-primary"%>
-<%= link_to "Back", administrators_path, class: "btn btn-info" %>
-
-<%= render "list" %>
+  <%= render "list" %>
+</body>
