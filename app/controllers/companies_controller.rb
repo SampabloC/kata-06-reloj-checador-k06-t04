@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CompaniesController < ApplicationController
   before_action :validate_url
 
@@ -13,7 +15,7 @@ class CompaniesController < ApplicationController
 
   def create
     company = Company.new(company_params)
-    company.administrator_id = "1"
+    company.administrator_id = '1'
     company.save
     redirect_to companies_path
   end
@@ -35,7 +37,7 @@ class CompaniesController < ApplicationController
 
     redirect_to companies_path
   end
-  
+
   private
 
   def company_params

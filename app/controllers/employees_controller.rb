@@ -16,7 +16,7 @@ class EmployeesController < ApplicationController
 
   def create
     employee = Employee.new(employee_params)
-    employee.administrator_id = "1"
+    employee.administrator_id = '1'
     employee.status = true
     employee.save
     redirect_to employees_path
@@ -42,15 +42,14 @@ class EmployeesController < ApplicationController
 
     redirect_to employees_path
   end
-  
+
   private
 
   def employee_params
-    params.require(:employee).permit(:employee_number, :name_employee, :email_employee, :position_employee)#, :administrator_id)
+    params.require(:employee).permit(:employee_number, :name_employee, :email_employee, :position_employee) # , :administrator_id)
   end
 
   def set_employees
     @employee = Employee.find(params[:id])
   end
-  
 end

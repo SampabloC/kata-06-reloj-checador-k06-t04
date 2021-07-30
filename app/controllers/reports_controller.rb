@@ -2,9 +2,9 @@
 
 # Clase del controlador de reportes
 class ReportsController < ApplicationController
-  before_action :validate_url, only: [:index, :report_average, :report_day, :report_month]
+  before_action :validate_url, only: %i[index report_average report_day report_month]
 
-  def index; 
+  def index
     @reports = Report.all
     render layout: 'submenu'
   end
@@ -24,9 +24,7 @@ class ReportsController < ApplicationController
   def create
     @employees = Employee.where(status: true) # Empleados activos
     @employees.each do |employee| # Iteracion entre todos los empleados actuvos
-      if employee.id == params['private_number'].to_i
-        check_validation(employee)
-      end
+      check_validation(employee) if employee.id == params['private_number'].to_i
     end
   end
 

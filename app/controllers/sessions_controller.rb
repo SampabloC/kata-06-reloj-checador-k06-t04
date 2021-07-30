@@ -1,18 +1,17 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
-  def validation
-  end
+class SessionsController < ApplicationController
+  def validation; end
 
   def create
-    @admin = Administrator.find_by email_admin:params[:email_admin]
+    @admin = Administrator.find_by email_admin: params[:email_admin]
 
-    if @admin && @admin.authenticate(params[:password])
-      session[:administrator_id] =  @admin.id
+    if @admin&.authenticate(params[:password])
+      session[:administrator_id] = @admin.id
       return redirect_to administrators_path
     end
-    flash.alert = "User not found"
+    flash.alert = 'User not found'
     redirect_to login_path
-
   end
 
   def destroy
