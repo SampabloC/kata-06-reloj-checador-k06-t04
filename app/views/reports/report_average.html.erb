@@ -1,78 +1,14 @@
 <%= link_to "back", reports_path, class: "btn btn-info" %>
-
-<% 
-  @reports = Report.all
-  check_in_per_mount = 0
-  check_out_per_mount = 0
-  full_hours_check_in = 0
-  full_hours_check_out = 0
-
-
-  @reports.each do |report|
-
-    if report.check_in.month == Time.now.month && report.check_in.year == Time.now.year 
-      hours_check_in = report.check_in.strftime('%H').to_f
-      minutes_check_in = report.check_in.strftime('%M').to_f
-
-      hours_check_in = hours_check_in + minutes_check_in/60
-      
-      full_hours_check_in += hours_check_in
-      check_in_per_mount += 1
-      
-      if report.check_out != nil
-        hours_check_out = report.check_out.strftime('%H').to_f
-        minutes_check_out = report.check_out.strftime('%M').to_f
-        
-        hours_check_out = hours_check_out + minutes_check_out/60
-        
-        full_hours_check_out += hours_check_out
-
-        check_out_per_mount += 1
-      end
-    end
-    
-
-  end
-  floats_check_in = full_hours_check_in/check_in_per_mount
-  floats_check_out = full_hours_check_out/check_out_per_mount
-
-  average_hour_check_in = floats_check_in.to_i
-  average_hour_check_out = floats_check_out.to_i
-  
-  floats_check_in = floats_check_in - average_hour_check_in
-  floats_check_out = floats_check_out - average_hour_check_out
-
-  average_minutes_check_in = floats_check_in*60
-  average_minutes_check_out = floats_check_out*60
-
-  average_minutes_check_in = average_minutes_check_in.to_i
-  average_minutes_check_out = average_minutes_check_out.to_i
-
-  
-
-%>
-
-
 <div>
   <div>
     <h3> Average Check In</h3>
 
-    <h4><%= "#{average_hour_check_in}:#{average_minutes_check_in}" %></h4>
-    
-
-
-
+    <h4><%= average_check_in() %></h4>
   </div>
+  
   <div>
     <h3> Average Check Out</h3>
-    <%if average_minutes_check_out <= 9%>
-      <h4> <%= "#{average_hour_check_out}:0#{average_minutes_check_out}" %> </h4>
-    <% else %>
-
-      <h4> <%= "#{average_hour_check_out}:#{average_minutes_check_out}" %> </h4>
     
-    <%end%>
-
-
+    <h4><%= average_check_out() %></h4>
   </div>  
 </div>

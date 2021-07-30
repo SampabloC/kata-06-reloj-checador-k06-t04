@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <% get_reports().each do |report| %>
-        <%if exist_reports_today(report).nil?%>
+        <% if exist_reports_today(report).nil? %>
           <%not_reports()%>
         <%else%>
           <tr>
