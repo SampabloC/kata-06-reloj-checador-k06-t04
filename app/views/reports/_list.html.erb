@@ -1,0 +1,26 @@
+<div id="table">  
+  <table class="table table-striped">
+    <thead class="thead-ligth">
+      <tr>
+        <th class="col">Check In</th>
+        <th class="col">Check Out</th>
+        <th class="col">Employee Private Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <td>
+            <%= "#{report.check_in.strftime('%d-%B-%Y')}  #{report.check_in.strftime('%R')} "%>
+          </td>
+          <td>
+            <%= check_out_exist(report) %>
+          </td>
+          <td>
+            <%= report.employee_id %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

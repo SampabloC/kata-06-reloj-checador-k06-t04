@@ -11,14 +11,25 @@ body {
   color: #4682B4;
 }
 
-#form_style {
-  width: 50vmax;
-  display: flex;
-  justify-content: center;
-  
-  flex-direction: column;
-  margin-top: 4%;
-  
+.btn-success{
+    margin-top: 50px;
+    padding: 5px 50px;
+    border-radius: 12px;
+    background-color: #DE108D;
+    color:  #0A139E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+}
+
+.btn-success:hover{
+  background-color: #0A139E;
+  color: #DE108D;
+}
+
+.form-label{
+  width: 300px;
+  text-align: start;
 }
 
 #th-private {

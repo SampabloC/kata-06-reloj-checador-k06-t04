@@ -1,27 +1,30 @@
-<div class="form">
+<div class="form d-flex justify-content-center">
   <%= form_for(@employee) do |employee| %>
-    <div class="d-flex row">
-      <div class="form-group d-flex justify-content-center">
+    <div class="container_form">
+      <div class="form-group mt-5">
         <%= employee.label :employee_number, class: "form-label"%>
-        <%= employee.text_field :employee_number, class: "form-control"%>
+        <%= employee.text_field :employee_number, style: "border-radius: 25px; box-shadow: none !important; border: 2px solid #DE108D !important;"%>
       </div>
 
-      <div class="form-group d-flex justify-content-center">
+      <div class="form-group mt-5">
         <%= employee.label :name_employee, class: "form-label"%>
-        <%= employee.text_field :name_employee, class: "form-control"%>
+        <%= employee.text_field :name_employee, style: "border-radius: 25px; box-shadow: none !important; border: 2px solid #0A139E !important;"%>
       </div>
 
-      <div class="form-group d-flex justify-content-center">
+      <div class="form-group mt-5">
         <%= employee.label :email_employee, class: "form-label"%>
-        <%= employee.text_field :email_employee, class: "form-control"%>
+        <%= employee.text_field :email_employee, style: "border-radius: 25px; box-shadow: none !important; border: 2px solid #DE108D !important;"%>
       </div>
 
-      <div class="form-group d-flex justify-content-center">
+      <div class="form-group mt-5">
         <%= employee.label :position_employee, class: "form-label"%>
-        <%= employee.text_field :position_employee, class: "form-control"%>
+        <%= employee.text_field :position_employee, style: "border-radius: 25px; box-shadow: none !important; border: 2px solid #0A139E !important;"%>
       </div>
       
       <%= employee.submit "Save", class: "btn btn-success"%>
     </div>
   <% end %>
+</div>
+<div class="buttons">
+  <%= link_to "Back", employees_path, class: "btn btn-info" %>
 </div>

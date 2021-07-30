@@ -5,13 +5,13 @@
       <div class="form-group">
         Email:
         <div id="block-text">
-        <%= text_field_tag :email_admin, '', class: "form-control" %>
+        <%= text_field_tag :email_admin, '', class: "form-control block_color_blue" %>
         </div>
       </div>
 
       <div class="form-group mt-5">
         Password:
-        <%= password_field_tag :password, '', class: "form-control" %>
+        <%= password_field_tag :password, '', class: "form-control block_color_pink" %>
       </div>
       <% flash.each do |type, msg| %>
         <div class="alert alert-info text-center">
